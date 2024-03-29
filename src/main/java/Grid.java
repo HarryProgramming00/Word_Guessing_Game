@@ -5,6 +5,7 @@ public class Grid {
 
     private final int numberOfRows;
     private final int numberOfSquares;
+    private int numberOfWordsInputed = 0;
 
     private ArrayList<Row> rows = new ArrayList<>();
 
@@ -30,8 +31,21 @@ public class Grid {
 
         for(int i = 0; i < numberOfRows; i++){
 
-            rows.add(new Row(numberOfSquares));
+            rows.add(new Row(numberOfSquares, i+1));
 
+        }
+    }
+
+    public void enterWord(String word){
+        for(Row tempRow : rows){
+            if(tempRow.getRowNumber() == (numberOfWordsInputed + 1)){
+                tempRow.setRowWord(word);
+
+                for(Square tempSquare : tempRow.getSquares()){
+                    tempSquare.setLetter(word.charAt(tempSquare.getSquareNumber() - 1));
+                }
+            }
+            break;
         }
     }
 }

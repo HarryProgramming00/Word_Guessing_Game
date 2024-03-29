@@ -2,6 +2,8 @@ public class Square {
 
     private char letter;
 
+
+    private final int squareNumber;
     public char getLetter() {
         return letter;
     }
@@ -10,7 +12,13 @@ public class Square {
         this.letter = letter;
     }
 
-    public Square(char letter){
+    public int getSquareNumber() {
+        return squareNumber;
+    }
+
+    public Square(char letter, int squareNumber){
         this.letter = letter;
+        this.squareNumber = squareNumber;
+
     }
 }
