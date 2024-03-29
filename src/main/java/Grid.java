@@ -8,9 +8,22 @@ public class Grid {
 
     private ArrayList<Row> rows = new ArrayList<>();
 
+    public int getNumberOfRows() {
+        return numberOfRows;
+    }
+
+    public int getNumberOfSquares() {
+        return numberOfSquares;
+    }
+
+    public ArrayList<Row> getRows() {
+        return rows;
+    }
+
     public Grid(int numberOfRows, int numberOfSquares){
         this.numberOfRows = numberOfRows;
         this.numberOfSquares = numberOfSquares;
+        generateRows();
     }
 
     private void generateRows(){
